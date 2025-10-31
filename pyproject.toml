@@ -1,0 +1,44 @@
+[project]
+name = "algorithmic-challenges"
+version = "0.1.0"
+description = "Collection of algorithmic challenges focusing on simulation, optimization, and game theory"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Molo"}
+]
+license = {file = "LICENSE"}
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+# Optional: Add these when you want to enforce code quality
+quality = [
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["dodgeball-2d", "market-maker", "drone-coordination", "powergrid-balancer"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false  # Set to true when you add type hints everywhere
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"

@@ -1,0 +1,8 @@
+4 3
+AX.O
+..B.
+.OX.
+O.XC
+A:E B:W C:N
+A:E B:W C:N
+A:S B:W C:N
